@@ -1,0 +1,183 @@
+html,
+body {
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding:0;
+    //background-color: #f5fffa;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+
+/*
+* origin css stuffs.
+*/
+.login-wrapper{
+    margin:100px auto;
+    width:30%;
+    min-width:300px;
+    border:1px solid cadetblue;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    text-align: center;
+    padding-bottom: 20px;
+}
+.login-title{
+    width: 100%;
+    background-color: #351a28;
+
+}
+.login-title h3{
+    color: wheat;
+}
+.background{
+    width: 100%;
+    postion:absolute;
+    -moz-border-radius-topleft: 6px;
+    border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    border-radius-topright: 6px;
+    padding: 1px;
+}
+
+.mybutton{
+    min-width:100px;
+}
+
+.countdown{
+    margin:0 auto;
+    width:500px;
+    text-align: center;
+}
+.countdown .countdown-content{
+    display: flex;
+    display: -webkit-flex;
+    justify-content:center;
+    -webkit-justify-content: center;
+    padding-top:20px;
+}
+.countdown .countdown-content .time-box{
+    width: 100px;
+    height:100px;
+    background-color: #0f0f0f;
+    border-radius: 10px;
+}
+.countdown .countdown-content .time-colon{
+    line-height:100px;
+    font-size:50px;
+    height:100px;
+}
+.time-box{
+    color: whitesmoke;
+    line-height:100px;
+    font-size:50px;
+    margin:0;
+}
+.dropdown-form :hover, .dropdown-form :focus{
+    color: #262626 !important;
+    text-decoration: none !important;
+    background-color: #f5f5f5 !important;
+}
+.btn-text{
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333 !important;
+    white-space: nowrap;
+    height: 26px;
+    width: 100%;
+}
+.btn-text :hover, .btn-text :focus{
+    color: #262626 !important;
+    text-decoration: none !important;
+    background-color: #f5f5f5 !important;
+}
