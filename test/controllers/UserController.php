@@ -3,7 +3,7 @@ namespace app\controllers;
 use Yii;
 use yii\filters\auth\HttpBearerAuth;
 
-class ItemController extends BaseAPIController
+class UserController extends BaseAPIController
 {
     public function behaviors()
     {
@@ -17,6 +17,6 @@ class ItemController extends BaseAPIController
     }
     public function actionIndex()
     {
-        return ['success'=>1,'msg'=>'hello'];
+        return ['success'=>1,'msg'=>'hello','username'=>Yii::$app->user->identity->username,'test1'=>Yii::$app->redis->get('test1')];
     }
 }

@@ -15,6 +15,7 @@ class LoginForm extends Model
 {
     public $username;
     public $password;
+    public $token;
     public $rememberMe = true;
 
     private $_user = false;
@@ -28,8 +29,6 @@ class LoginForm extends Model
         return [
             // username and password are both required
             [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
-            ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
@@ -45,9 +44,9 @@ class LoginForm extends Model
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
-            $user = $this->getUser();
+            $this->getUser();
 
-            if (!$user || !$user->validatePassword($this->password)) {
+            if (!$this->_user || !$this->_user->validatePassword($this->password)) {
                 $this->addError($attribute, 'Incorrect username or password.');
             }
         }
@@ -60,7 +59,10 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+
+            $this->token = $this->_user->generateAccessToken();
+            Yii::$app->redis->set('test1','asdasd');
+            return Yii::$app->user->login($this->_user,  0);
         }
         return false;
     }
@@ -76,6 +78,12 @@ class LoginForm extends Model
             $this->_user = User::findByUsername($this->username);
         }
 
-        return $this->_user;
     }
+/*
+    public function generateAccessToken(){
+        $user = User::find()->where(['username' => $this->username])->one();
+        $user->accessToken = Yii::$app->security->generateRandomString();
+        $user->save(true);
+    }
+*/
 }

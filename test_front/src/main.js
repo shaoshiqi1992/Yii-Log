@@ -3,22 +3,19 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 
 import http from './services/http.js'
-import {Button, Form,Input,Icon,FormItem} from 'iview';
-import 'iview/dist/styles/iview.css';
+import iView from 'iview';
+import 'iview/dist/styles/iview.css'
 import 'bootstrap/dist/css/bootstrap.css'
-
 import Login from './components/Login.vue'
 import Home from './components/Home.vue'
 
-
-Vue.component('Button', Button);
-Vue.component('Form', Form);
-Vue.component('Input', Input);
-Vue.component('Icon', Icon);
-Vue.component('Form-item', FormItem);
+Vue.use(VueRouter);
+Vue.use(iView);
 
 Vue.prototype.$http = http
-Vue.use(VueRouter);
+
+
+
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,

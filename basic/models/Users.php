@@ -19,7 +19,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
                 'username' => 'admin',
                 'password' => 'admin',
                 'authKey' => 'test100key',
-                'accessToken' => '100-token',
+                'accessTokwaen' => '100-token',
             ],
             '101' => [
                 'id' => '101',

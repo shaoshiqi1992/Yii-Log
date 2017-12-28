@@ -12,6 +12,7 @@ axios.interceptors.request.use(
   config => {
     if (Auth.authenticated()) {
       var token = Auth.getToken();
+      //console.log(token);
       config.headers.common["Authorization"] = `Bearer ${token}`;
     }
     return config;

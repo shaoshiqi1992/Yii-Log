@@ -44,6 +44,7 @@
 </style>
 <script>
   import Auth from '../services/auth.js'
+  import setting from "../config/setting";
 
   export default {
     data () {
@@ -77,6 +78,7 @@
             console.log(res);
             if(res.data.success){
               Auth.login(res.data.msg);
+              console.log(localStorage.tk);
               this.$router.push({path:'/'})
             }else{
               this.$Message.error(res.data.msg); // 登录失败，显示提示语

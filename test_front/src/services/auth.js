@@ -1,7 +1,7 @@
 import setting from '../config/setting.js'
 export default {
   login(data){
-    localStorage.setItem(setting.userToken,data)
+    localStorage.setItem(setting.userToken,data);
   },
   // authentication status
   authenticated(){
