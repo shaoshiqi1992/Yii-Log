@@ -9,6 +9,7 @@ export default {
     return t && t.length > 0;
   },
   getToken(){
+    //console.log(localStorage);
     return localStorage.getItem(setting.userToken);
   },
   logout(){

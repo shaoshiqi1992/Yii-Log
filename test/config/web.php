@@ -19,13 +19,18 @@ $config = [
                 'application/json' => 'yii\web\JsonParser',
                 'text/json' => 'yii\web\JsonParser',
             ],
+            'csrfParam' => '_csrf-frontend',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => false,
+            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+        ],
+        'session' => [
+            'name' => 'test-session'
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

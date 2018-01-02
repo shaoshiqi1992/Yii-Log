@@ -22,9 +22,8 @@ class AuthController extends BaseAPIController
 //            "user"=>$model->getUser()]);
 //        exit(0);
         if ($model->load($post) && $model->login()) {
-            print_r(["login"=>\Yii::$app->user->identity->username,"pass"=>\Yii::$app->user->identity->password]);
-            exit(0);
-            return ['success'=>1,'msg'=>$model->token,'username'=>$model->username];
+
+            return ['success'=>1,'msg'=>$model->token];
         }
         return ['success'=>0,'msg'=>'wrong username or password.'];
     }

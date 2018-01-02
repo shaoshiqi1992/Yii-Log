@@ -6,8 +6,10 @@ import http from './services/http.js'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import Login from './components/Login.vue'
-import Home from './components/Home.vue'
+import Login from './views/login.vue'
+import Home from './views/index.vue'
+import AddCampaign from './modules/campaign/add.vue'
+
 
 Vue.use(VueRouter);
 Vue.use(iView);
@@ -30,6 +32,10 @@ const router = new VueRouter({
     {
       path: '/login',
       component: Login
+    },
+    {
+      path:'/campaign/add',
+      component:AddCampaign
     }
   ]
 })

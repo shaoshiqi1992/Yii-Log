@@ -17,6 +17,10 @@ class UserController extends BaseAPIController
     }
     public function actionIndex()
     {
-        return ['success'=>1,'msg'=>'hello','username'=>Yii::$app->user->identity->username,'test1'=>Yii::$app->redis->get('test1')];
+        $user = \Yii::$app->user->identity;
+
+//        print_r($user);
+//        exit(0);
+        return ['success'=>1,'msg'=>'hello','username'=>\Yii::$app->user->identity->username,'test1'=>Yii::$app->redis->get('test1')];
     }
 }

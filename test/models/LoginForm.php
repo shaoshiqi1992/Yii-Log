@@ -62,7 +62,10 @@ class LoginForm extends Model
 
             $this->token = $this->_user->generateAccessToken();
             Yii::$app->redis->set('test1','asdasd');
-            return Yii::$app->user->login($this->_user,  0);
+
+            //Yii::$app->user->login($this->_user,  3600*24);
+
+            return Yii::$app->user->login($this->_user,  3600*24);
         }
         return false;
     }

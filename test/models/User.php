@@ -55,7 +55,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public static function findIdentityByAccessToken($token, $type = null)
     {
         $user = self::find()
-            ->where(['username' => "admin"])
+            ->where(['accessToken' => $token])
             ->asArray()
             ->one();
 
@@ -64,14 +64,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         }
 
         return null;
-        //return static::findOne(['access_token' => $token]);
-//        foreach (self::$users as $user) {
-//            if ($user['accessToken'] === $token) {
-//                return new static($user);
-//            }
-//        }
-//
-//        return null;
+
     }
 
     /**
@@ -80,9 +73,9 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      * @param  string      $username
      *
      */
-    public static function findByUsername($username)
+    public static function findByUsername($user)
     {
-        $user = self::find()->where(['username' => $username])->one();
+        $user = self::find()->where(['username' => $user])->one();
 
 
         if($user){
